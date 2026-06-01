@@ -1,0 +1,8 @@
+# .gitignore
+.env
+session.session
+*.session-journal
+__pycache__/
+*.pyc
+.DS_Store
+venv/
