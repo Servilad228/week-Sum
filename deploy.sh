@@ -11,8 +11,11 @@ echo "=== Week Summarizer — деплой ==="
 
 # 1. Создать директорию
 mkdir -p "$PROJECT_DIR"
-cp -r ./* "$PROJECT_DIR/"
+# Копируем все файлы, включая скрытые (начинающиеся с точки), кроме . и ..
+cp -r * "$PROJECT_DIR/" 2>/dev/null || true
+cp -r .[^.]* "$PROJECT_DIR/" 2>/dev/null || true
 cd "$PROJECT_DIR"
+
 
 # 2. Создать виртуальное окружение
 echo "→ Создаю venv..."
